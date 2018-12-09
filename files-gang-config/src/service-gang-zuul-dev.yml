@@ -1,0 +1,24 @@
+
+#zuul路径映射，/routes?format=details查看映射信息
+zuul:
+  routes:
+    api-a:
+      path: /test1/**
+      serviceId: service-gang-test1
+    api-b:
+      path: /test2/**
+      serviceId: service-gang-test2
+    api-c:
+      path: /test3/**
+      serviceId: service-gang-test3
+
+
+#rabbitmq配置
+spring:
+  rabbitmq:
+    host: localhost
+    password: cloud
+    port: 5672
+    username: cloud
+    virtual-host: /cloud
+      
