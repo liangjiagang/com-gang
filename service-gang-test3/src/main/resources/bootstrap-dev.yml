@@ -1,0 +1,49 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://root:993928@127.0.0.1:10001/eureka/,http://root:993928@127.0.0.1:10002/eureka/,http://root:993928@127.0.0.1:10003/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${random.int} #为了动态生成端口
+
+server:
+  port: 0
+spring:
+  sleuth:
+    #enabled: true #监控开关
+    sampler:
+      percentage: 0.1 #zipkin采样率，默认为0.1，改为1后全采样，但是会降低接口调用效率
+  zipkin:
+    #base-url: http://127.0.0.1:10022
+      rabbitmq:
+        queue: zipkin
+  application:
+    name: service-gang-test3 #这在以后的服务与服务之间相互调用一般都是根据这个name
+    index: ${eureka.instance.instance-id} #为了动态生成端口
+  cloud:
+    bus: #消息总线配置,/bus/refresh全部刷新，/bus/refresh?destination=customers:** 即刷新服务名为customers的所有服务，/bus/env发送键/值对来更新每个节点的环境
+      trace: #要使用POST请求刷新
+        enabled: true #/trace查看bus事件
+    config:  #配置中心配置，一个项目只能使用一个配置文件，第二个不加载
+      name: service-gang-test3 # 和git里的文件名对应
+      #label: master  # 远程仓库的分支
+      profile: dev  # dev 开发环境配置文件 |  test 测试环境  |  pro 正式环境
+      #failFast: true
+      # 指明配置服务中心的网址
+      #uri: http://localhost:8117/
+      discovery:
+        enabled: true #开启Config服务发现支持
+        service-id: server-gang-config #指定server端的name,配置中心的名字，直接配置名称可以在配置中心集群的时候实现负载均衡
+
+feign: #feign集合了ribbon和hystrix
+  hystrix:
+    enabled: true #开启feign的hystrix
+
+#security:
+  #user:
+    #name: root
+    #password: root
+management:
+  security:
+    enabled: false
+  #enabled: true #bus刷新时，开启安全验证
+    #roles: ADMIN

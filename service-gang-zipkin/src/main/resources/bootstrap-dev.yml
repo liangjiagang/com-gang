@@ -1,0 +1,40 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://root:993928@127.0.0.1:10001/eureka/,http://root:993928@127.0.0.1:10002/eureka/,http://root:993928@127.0.0.1:10003/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${random.int} #为了动态生成端口
+
+server:
+  port: 10022
+spring:
+  application:
+    name: service-gang-zipkin #这在以后的服务与服务之间相互调用一般都是根据这个name
+    index: ${eureka.instance.instance-id} #为了动态生成端口
+  sleuth:
+    enabled: false
+    sampler:
+      percentage: 0.1
+
+zipkin: #不知道为什么，bus的mq配置和zipkin的mq配置冲突，zipkinserver暂时不能共同使用
+  storage:
+    type: elasticsearch
+    StorageComponent: elasticsearch
+    elasticsearch:
+      cluster: elasticsearch
+      max-requests: 30
+      index: zipkin
+      index-shards: 5
+      index-replicas: 1
+      hosts: 127.0.0.1:9200
+      maxHttpHeaderSize: 8192
+  collector:
+    rabbitmq:
+      addresses: localhost:5672
+      password: cloud
+      username: cloud
+      queue: zipkin
+      virtual-host: /cloud
+
+
+
