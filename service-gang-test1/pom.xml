@@ -46,6 +46,15 @@
             <artifactId>spring-rabbit</artifactId>
         </dependency>
 
+        <!--<dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-sleuth-zipkin-stream</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+        </dependency>-->
+
         <!--请求时登录验证-->
         <!--<dependency>
             <groupId>org.springframework.boot</groupId>

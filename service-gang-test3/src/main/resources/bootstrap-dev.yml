@@ -15,7 +15,7 @@ spring:
   zipkin:
     #base-url: http://127.0.0.1:10022
       rabbitmq:
-        queue: zipkin
+        queue: gang-zipkin
   application:
     name: service-gang-test3 #这在以后的服务与服务之间相互调用一般都是根据这个name
     index: ${eureka.instance.instance-id} #为了动态生成端口

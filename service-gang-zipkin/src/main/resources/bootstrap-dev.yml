@@ -8,11 +8,17 @@ eureka:
 server:
   port: 10022
 spring:
+  #rabbitmq:
+    #host: localhost
+    #password: cloud
+    #port: 5672
+    #username: cloud
+    #virtual-host: /cloud
   application:
     name: service-gang-zipkin #这在以后的服务与服务之间相互调用一般都是根据这个name
     index: ${eureka.instance.instance-id} #为了动态生成端口
   sleuth:
-    enabled: false
+    enabled: false #表示当前程序不使用sleuth
     sampler:
       percentage: 0.1
 
@@ -33,7 +39,7 @@ zipkin: #不知道为什么，bus的mq配置和zipkin的mq配置冲突，zipkins
       addresses: localhost:5672
       password: cloud
       username: cloud
-      queue: zipkin
+      queue: gang-zipkin
       virtual-host: /cloud
 
 
