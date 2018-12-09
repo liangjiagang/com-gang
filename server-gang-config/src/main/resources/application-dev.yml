@@ -8,24 +8,23 @@ eureka:
 server:
   port: 0
 spring:
-  profiles:
-    active: native #开启本地配置文件
+  #profiles:
+    #active: native #开启本地配置文件
   application:
     name: server-gang-config #这在以后的服务与服务之间相互调用一般都是根据这个name
     index: ${eureka.instance.instance-id}
   cloud:
     config:
       server: #config-server不能使用配置中心，原因是项目启动时不去加载配置文件，同时也不能是用springboot多环境启动，开启本地占用了active，尚不知道git方式能不能用
-        native:
-          search-locations: I:/cloud-config #注意路径分割符即便是win也是/
+        #native:
+          #search-locations: I:/cloud-config #注意路径分割符即便是win也是/
           #search-locations: /u01/gang/cloud-config
           #search-locations: classpath:ymls/  #可以存在项目路径下
-          #git:
-          #uri: https://github.com/liangjiagang/cloudconfig #服务的git仓库地址
-          #search-paths: /** #配置文件所在的目录
-          #username: xxxxoooo
-          #password: xxxxoooo
-      #label: master #配置文件所在的分支
+        git:
+          uri: https://github.com/liangjiagang/com-gang #服务的git仓库地址
+          search-paths: /files-gang-config/src #配置文件所在的目录
+
+      label: master #配置文件所在的分支
 
 
 
