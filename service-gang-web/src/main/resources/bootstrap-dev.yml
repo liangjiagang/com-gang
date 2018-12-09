@@ -1,0 +1,14 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://root:993928@127.0.0.1:10001/eureka/,http://root:993928@127.0.0.1:10002/eureka/,http://root:993928@127.0.0.1:10003/eureka/
+  instance:
+    instance-id: ${spring.application.name}:${random.int} #为了动态生成端口
+
+server:
+  port: 0
+
+spring:
+  application:
+    name: service-gang-test3 #这在以后的服务与服务之间相互调用一般都是根据这个name
+    index: ${eureka.instance.instance-id} #为了动态生成端口
