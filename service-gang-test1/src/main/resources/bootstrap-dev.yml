@@ -14,7 +14,7 @@ spring:
         enabled: true #/trace查看bus事件
     config:  #配置中心配置，一个项目只能使用一个配置文件，第二个不加载
       name: service-gang-test1 # 和git里的文件名对应
-      #label: master  # 远程仓库的分支
+      label: master  # 远程仓库的分支
       profile: dev  # dev 开发环境配置文件 |  test 测试环境  |  pro 正式环境
       #failFast: true
       # 指明配置服务中心的网址
