@@ -1,6 +1,6 @@
 
 #测试数据
-aa: 1111
+aa: aaaa
 
 #rabbitmq配置
 spring:
