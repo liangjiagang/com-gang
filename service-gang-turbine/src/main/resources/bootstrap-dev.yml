@@ -8,20 +8,33 @@ eureka:
 server:
   port: 10021
 spring:
+  cloud:
+    bus: #消息总线配置,/bus/refresh全部刷新，/bus/refresh?destination=customers:** 即刷新服务名为customers的所有服务，/bus/env发送键/值对来更新每个节点的环境
+      trace: #要使用POST请求刷新
+        enabled: true #/trace查看bus事件
+    config:  #配置中心配置，一个项目只能使用一个配置文件，第二个不加载
+      name: service-gang-turbine # 和git里的文件名对应
+      label: master  # 远程仓库的分支
+      profile: dev  # dev 开发环境配置文件 |  test 测试环境  |  pro 正式环境
+      #failFast: true
+      # 指明配置服务中心的网址
+      #uri: http://localhost:8117/
+      discovery:
+        enabled: true #开启Config服务发现支持
+        service-id: server-gang-config #指定server端的name,配置中心的名字，直接配置名称可以在配置中心集群的时候实现负载均衡
   application:
     name: service-gang-turbine #这在以后的服务与服务之间相互调用一般都是根据这个name
     index: ${eureka.instance.instance-id} #为了动态生成端口
 
-turbine:
-  aggregator:
-    clusterConfig: default   # 指定聚合哪些集群，多个使用","分割，默认为default。可使用http://.../turbine.stream?cluster={clusterConfig之一}访问
-  appConfig: service-gang-test1,service-gang-test2,service-gang-test3  # 配置Eureka中的serviceId列表，表明监控哪些服务
-  clusterNameExpression: new String("default")
-    # 1. clusterNameExpression指定集群名称，默认表达式appName；此时：turbine.aggregator.clusterConfig需要配置想要监控的应用名称
-    # 2. 当clusterNameExpression: default时，turbine.aggregator.clusterConfig可以不写，因为默认就是default
-    # 3. 当clusterNameExpression: metadata['cluster']时，假设想要监控的应用配置了eureka.instance.metadata-map.cluster: ABC，则需要配置，同时turbine.aggregator.clusterConfig: ABC
-
-
+#security:
+  #user:
+    #name: root
+    #password: root
+management:
+  security:
+    enabled: false
+    #enabled: true #bus刷新时，开启安全验证
+    #roles: ADMIN
 
 
 

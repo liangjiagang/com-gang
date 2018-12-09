@@ -11,6 +11,9 @@ zuul:
     api-c:
       path: /test3/**
       serviceId: service-gang-test3
+    api-d:
+      path: /web/**
+      serviceId: service-gang-web
 
 
 #rabbitmq配置
