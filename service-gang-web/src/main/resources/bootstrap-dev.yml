@@ -32,7 +32,7 @@ spring:
         enabled: true #开启Config服务发现支持
         service-id: server-gang-config #指定server端的name,配置中心的名字，直接配置名称可以在配置中心集群的时候实现负载均衡
   application:
-    name: service-gang-test3 #这在以后的服务与服务之间相互调用一般都是根据这个name
+    name: service-gang-web #这在以后的服务与服务之间相互调用一般都是根据这个name
     index: ${eureka.instance.instance-id} #为了动态生成端口
 
 #security:
