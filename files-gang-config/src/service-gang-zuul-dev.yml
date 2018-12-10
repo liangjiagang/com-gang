@@ -12,7 +12,7 @@ zuul:
       path: /test3/**
       serviceId: service-gang-test3
     api-d:
-      path: /web/**
+      path: /**
       serviceId: service-gang-web
 
 
