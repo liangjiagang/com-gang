@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 @RefreshScope
@@ -26,6 +27,11 @@ public class Test3Controller {
     String aa;
     @Value("${eureka.instance.instance-id}")
     String id;
+
+    @RequestMapping("/")
+    public ModelAndView index() {
+        return new ModelAndView("index");
+    }
 
     @RequestMapping("/hi1")
     public String hi1(@RequestParam String name){
