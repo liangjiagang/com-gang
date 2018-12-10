@@ -1,0 +1,32 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta content="text/html; charset=UTF-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>首页-liangjiagang</title>
+
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="../static/css/vendor/bootstrap.min.css">
+    <!-- Jquery Ui CSS-->
+    <link rel="stylesheet" href="../static/css/vendor/jquery-ui.css">
+
+</head>
+<body>
+<p>这是第一段</p>
+<!--/*@thymesVar id="textValue" type="java.lang.String"*/-->
+<p th:text="${textValue}">这是第二段</p>
+</body>
+
+<!--Jquery 1.12.4-->
+<script src="../static/js/vendor/jquery-1.12.4.min.js"></script>
+<!--Bootstrap-->
+<script src="../static/js/vendor/bootstrap.min.js"></script>
+<!-- Modernizr Js -->
+<script src="../static/js/vendor/modernizr-2.8.3.min.js"></script>
+
+</html>
+
+
+

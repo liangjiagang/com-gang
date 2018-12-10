@@ -14,8 +14,8 @@ eureka:
     serviceUrl: #主机名方式需要更改hosts文件
       #defaultZone: http://root:993928@peer1:10001/eureka/,http://root:993928@peer2:10002/eureka/,http://root:993928@peer3:10003/eureka/
       defaultZone: http://root:993928@127.0.0.1:10001/eureka/,http://root:993928@127.0.0.1:10002/eureka/,http://root:993928@127.0.0.1:10003/eureka/
-  server:
-    enable-self-preservation: false #关闭阀值,关闭注册中心的保护机制，Eureka 会统计15分钟之内心跳失败的比例低于85%将会触发保护机制，不剔除服务提供者，如果关闭服务注册中心将不可用的实例正确剔除
+  #server:
+    #enable-self-preservation: false #关闭阀值,关闭注册中心的保护机制，Eureka 会统计15分钟之内心跳失败的比例低于85%将会触发保护机制，不剔除服务提供者，如果关闭服务注册中心将不可用的实例正确剔除
     #renewal-percent-threshold: 0.85 #触发自我保护的心跳数比例阈值,默认0.85
     #renewal-threshold-update-interval-ms: ${15*60*1000} #多久重置一下心跳阈值，默认15*60*1000
 # 安全认证的配置
