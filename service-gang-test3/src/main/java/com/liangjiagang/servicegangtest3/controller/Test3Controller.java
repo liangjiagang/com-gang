@@ -28,11 +28,6 @@ public class Test3Controller {
     @Value("${eureka.instance.instance-id}")
     String id;
 
-    @RequestMapping("/")
-    public ModelAndView index() {
-        return new ModelAndView("index");
-    }
-
     @RequestMapping("/hi1")
     public String hi1(@RequestParam String name){
         return schedualClientEurekaTest1.hi("hi1"+name+aa);
