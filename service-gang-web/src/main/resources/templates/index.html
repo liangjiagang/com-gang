@@ -1,12 +1,15 @@
 <!DOCTYPE HTML>
-<html lang="zh-CN"
+<html class="no-js" lang="zh-CN"
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta content="text/html; charset=UTF-8"/>
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>首页-liangjiagang</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>首页 || liangjiagang</title>
 
+    <!-- Modernizr Js 必须放在head里引用 -->
+    <script type="text/javascript" th:src="@{/js/vendor/modernizr-2.8.3.min.js}"></script>
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/bootstrap.min.css}" >
     <!-- Jquery Ui CSS-->
@@ -14,9 +17,12 @@
 
 </head>
 <body>
-<p>这是第一段</p>
-<!--/*@thymesVar id="textValue" type="java.lang.String"*/-->
-<p th:text="${textValue}">这是第二段</p>
+    <div class="wrapper">
+        <p>这是第一段</p>
+        <!--/*@thymesVar id="textValue" type="java.lang.String"*/-->
+        <p th:text="${textValue}">这是第二段</p>
+        <p>这是第一段</p>
+    </div>
 </body>
 
 <!--Jquery 1.12.4-->

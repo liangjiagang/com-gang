@@ -45,19 +45,19 @@ public class Test3Controller {
     }
 
     //这只是thymeleaf的例子没什么用
-    @RequestMapping(value = "/")
+    /*@RequestMapping(value = "/")
     public String hello(Model model) {
         model.addAttribute("textValue","hello woled");
         return "index";
-    }
+    }*/
 
     //这只是thymeleaf的例子没什么用
-    @RequestMapping(value = "/index")
+    /*@RequestMapping(value = "/index")
     public ModelAndView index(){
         ModelAndView mav = new ModelAndView("message/list");
         mav.addObject("textValue","hello woled");
         return mav;
     }
-
+*/
 
 }
