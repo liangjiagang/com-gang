@@ -6,6 +6,7 @@ import com.liangjiagang.servicegangtest3.feign.ServiceGangTest2Feign;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -42,5 +43,21 @@ public class Test3Controller {
     public  String hi3(String name){
         return id;
     }
+
+    //这只是thymeleaf的例子没什么用
+    @RequestMapping(value = "/")
+    public String hello(Model model) {
+        model.addAttribute("textValue","hello woled");
+        return "index";
+    }
+
+    //这只是thymeleaf的例子没什么用
+    @RequestMapping(value = "/index")
+    public ModelAndView index(){
+        ModelAndView mav = new ModelAndView("message/list");
+        mav.addObject("textValue","hello woled");
+        return mav;
+    }
+
 
 }
