@@ -7,19 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
     <title>首页 || liangjiagang</title>
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/img/favicon.ico}">
 
+    <!--All Css Here-->
+    <!--时刻注意加载顺序问题-->
     <!-- Bootstrap CSS-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/bootstrap.min.css}" >
+    <!-- Font Awesome CSS 基于css框架的网页字体图标库-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/font-awesome.min.css}">
+    <!-- jQuery幻灯片插件OWL Carousel Owl Carousel CSS-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/owl.carousel.min.css}">
+    <!-- Slick CSS jquery旋转木马插件-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/slick.css}">
+    <!-- Meanmenu CSS 响应式移动菜单插件-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/meanmenu.min.css}">
     <!-- Jquery Ui CSS-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/jquery-ui.css}" >
-    <!-- Meanmenu CSS-->
-    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/meanmenu.min.css}">
     <!-- Style CSS -->
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
-    <!-- Responsive CSS -->
+    <!-- Responsive CSS bootstrap实现响应式效果 -->
     <link rel="stylesheet" type="text/css" th:href="@{/css/responsive.css}">
-    <!-- Font Awesome CSS-->
-    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/font-awesome.min.css}">
+
 
     <!-- Modernizr Js 必须放在head里引用 -->
     <script type="text/javascript" th:src="@{/js/vendor/modernizr-2.8.3.min.js}"></script>
@@ -63,6 +72,13 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <!--Mobile Menu Area Start-->
+                                    <div class="mobile-menu d-lg-none"></div>
+                                    <!--Mobile Menu Area End-->
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -74,24 +90,47 @@
             <div class="hero-slider hero-slider-3 owl-carousel">
                 <!--Single Slider Start-->
                 <div class="single-slider slider-style-3" style="background-image: url(/img/slider/index-001.jpg)">
+                    <div class="slider-progress"></div>
+                    <div class="container">
+                        <div class="hero-slider-content hero-slider-content-3">
+
+                        </div>
+                    </div>
                 </div>
                 <!--Single Slider End-->
                 <!--Single Slider Start-->
                 <div class="single-slider slider-style-3" style="background-image: url(/img/slider/home3-slider2.jpg)">
+                    <div class="slider-progress"></div>
+                    <div class="container">
+                        <div class="hero-slider-content hero-slider-content-3">
+                        </div>
+                    </div>
                 </div>
                 <!--Single Slider End-->
             </div>
         </div>
         <!--Slider Area End-->
     </div>
+
+
+    <!--注意js加载的顺序问题-->
+    <!--Jquery 1.12.4-->
+    <script type="text/javascript" th:src="@{/js/vendor/jquery-1.12.4.min.js}"></script>
+    <!--Bootstrap-->
+    <script type="text/javascript" th:src="@{/js/vendor/bootstrap.min.js}"></script>
+    <!--Venobox VenoBox jQuery灯箱插件-->
+    <script type="text/javascript" th:src="@{/js/vendor/venobox.min.js}"></script>
+    <!--jQuery幻灯片插件OWL Carousel-->
+    <script type="text/javascript" th:src="@{/js/vendor/owl.carousel.min.js}"></script>
+    <!--Slick jquery旋转木马插件-->
+    <script type="text/javascript" th:src="@{/js/vendor/slick.min.js}"></script>
+    <!--Meanmenu响应式移动菜单插件-->
+    <script type="text/javascript" th:src="@{/js/vendor/jquery.meanmenu.min.js}"></script>
+    <!--Main Js 必须放到最后面-->
+    <script type="text/javascript" th:src="@{/js/main.js}"></script>
+
 </body>
 
-<!--Jquery 1.12.4-->
-<script type="text/javascript" th:src="@{/js/vendor/jquery-1.12.4.min.js}"></script>
-<!--Bootstrap-->
-<script type="text/javascript" th:src="@{/js/vendor/bootstrap.min.js}"></script>
-<!--Venobox-->
-<script type="text/javascript" th:src="@{/js/vendor/venobox.min.js}"></script>
 
 </html>
 
