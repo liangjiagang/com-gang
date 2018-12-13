@@ -50,14 +50,14 @@
                                     <div class="header-menu">
                                         <nav>
                                             <ul class="main-menu">
-                                                <li><a href="/">首页</a></li>
-                                                <li><a href="shop.html">共享笔记</a>
-                                                    <ul class="dropdown">
+                                                <li th:each="main_menu_vo1,iterStat1 : ${main_menu_list}">
+                                                    <a  th:href="${main_menu_vo1.href}" th:text="${main_menu_vo1.text}"></a>
+                                                    <ul class="dropdown" th:if="${main_menu_vo1.list}">
+                                                        <li th:each="main_menu_vo2,iterStat2 : ${main_menu_vo1.list}">
+                                                            <a  th:href="${main_menu_vo2.href}" th:text="${main_menu_vo2.text}"></a>
+                                                        </li>
                                                     </ul>
                                                 </li>
-                                                <li><a href="portfolio.html">排行榜</a></li>
-                                                <li><a href="blog.html">登录</a></li>
-                                                <li><a href="blog.html">注册</a></li>
                                             </ul>
                                         </nav>
                                     </div>
@@ -68,6 +68,21 @@
                 </div>
             </div>
         </header>
+        <!--Header Area End-->
+        <!--Slider Area Start-->
+        <div class="slider-area">
+            <div class="hero-slider hero-slider-3 owl-carousel">
+                <!--Single Slider Start-->
+                <div class="single-slider slider-style-3" style="background-image: url(/img/slider/index-001.jpg)">
+                </div>
+                <!--Single Slider End-->
+                <!--Single Slider Start-->
+                <div class="single-slider slider-style-3" style="background-image: url(/img/slider/home3-slider2.jpg)">
+                </div>
+                <!--Single Slider End-->
+            </div>
+        </div>
+        <!--Slider Area End-->
     </div>
 </body>
 
