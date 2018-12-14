@@ -7,32 +7,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
     <title>首页 || liangjiagang</title>
-    <!-- Place favicon.ico in the root directory -->
+    <!-- 在根目录中放置FavigICO.ICO -->
     <link rel="shortcut icon" type="image/x-icon" th:href="@{/img/favicon.ico}">
 
-    <!--All Css Here-->
     <!--时刻注意加载顺序问题-->
-    <!-- Bootstrap CSS-->
+    <!--All Css Here-->
+    <!-- Bootstrap 世界上最受欢迎的前端组件库在Web上构建响应迅速，移动优先的项目
+    Bootstrap是一个用于使用HTML，CSS和JS进行开发的开源工具包。使用我们的Sass变量和mixins，
+    响应式网格系统，广泛的预构建组件以及基于jQuery构建的强大插件，快速构建您的想法或构建整个应用程序-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/bootstrap.min.css}" >
-    <!-- Font Awesome CSS 基于css框架的网页字体图标库-->
+    <!-- Linearicon 矢量线图标包-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/linearicons.min.css}">
+    <!-- Font Awesome 网络上最受欢迎的图标集和工具包，在您的网站上获取矢量图标和社交徽标-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/font-awesome.min.css}">
-    <!-- jQuery幻灯片插件OWL Carousel Owl Carousel CSS-->
+    <!-- Animate.css 是一个有趣的，跨浏览器的css3动画库-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/animate.css}">
+    <!--OWL Carousel 触控启用的jQuery插件，可让您创建一个漂亮的响应式轮播滑块-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/owl.carousel.min.css}">
-    <!-- Slick CSS jquery旋转木马插件-->
+    <!-- Slick 一个jQuery响应式触摸旋转木马-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/slick.css}">
-    <!-- Meanmenu CSS 响应式移动菜单插件-->
+    <!-- Meanmenu 响应式移动菜单插件 主要特点
+    隐藏或显示菜单子项
+    目标导航元素与MeanMenu交换
+    方向调整（当您倾斜设备时，居中菜单将重新定位）
+    控制屏幕宽度，MeanMenu激活
+    扩展/折叠子导航
+    捆绑了可配置的CSS
+    快速设置和配置
+    媒体查询独立-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/meanmenu.min.css}">
-    <!-- Venobox VenoBox jQuery灯箱插件 CSS-->
+    <!-- EasyZoom 是一个优雅,高度优化的jQuery插件支持图像缩放和平移基于源图放大。easyzoom还支持触摸功能的设备，并与CSS很容易定制-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/easyzoom.css}">
+    <!-- Venobox 响应式jQuery Lightbox灯箱插件，适用于图像，内联内容，iFrame，Google-Maps，Ajax请求，Vimeo和YouTube视频-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/venobox.css}">
-    <!-- Jquery Ui CSS-->
+    <!-- Jquery Ui 是一组精心设计的用户界面交互，效果，小部件和构建在jQuery JavaScript库之上的主题-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/jquery-ui.css}" >
-    <!-- Style CSS -->
+    <!-- Nice Select 一个轻量级的jQuery插件，用可自定义的下拉列表替换原生的select元素-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/nice-select.css}">
+    <!-- Style 自定义样式-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
-    <!-- Responsive CSS bootstrap实现响应式效果 -->
+    <!-- Responsive 为bootstrap实现响应式效果-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/responsive.css}">
 
-
-    <!-- Modernizr Js 必须放在head里引用 -->
+    <!--加载顺序问题,必须放在head里引用-->
+    <!-- Modernizr  以轻松提供分层体验：利用支持它们的浏览器中的最新和最强大的功能，而不会让不那么幸运的用户高低干燥-->
     <script type="text/javascript" th:src="@{/js/vendor/modernizr-2.8.3.min.js}"></script>
 
 
@@ -93,7 +111,7 @@
         <div class="slider-area">
             <div class="hero-slider hero-slider-3 owl-carousel">
                 <!--Single Slider Start-->
-                <div class="single-slider slider-style-3" style="background-image: url(/img/slider/index-001.jpg)">
+                <div class="single-slider slider-style-3" style="background-image: url(/img/slider/index-003.jpg)">
                     <div class="slider-progress"></div>
                     <div class="container">
                         <div class="hero-slider-content hero-slider-content-3">
@@ -103,7 +121,7 @@
                 </div>
                 <!--Single Slider End-->
                 <!--Single Slider Start-->
-                <div class="single-slider slider-style-3" style="background-image: url(/img/slider/home3-slider2.jpg)">
+                <div class="single-slider slider-style-3" style="background-image: url(/img/slider/index-002.jpg)">
                     <div class="slider-progress"></div>
                     <div class="container">
                         <div class="hero-slider-content hero-slider-content-3">
@@ -118,17 +136,29 @@
 
 
     <!--注意js加载的顺序问题-->
-    <!--Jquery 1.12.4-->
+    <!--Jquery 1.12.4 是一个快速，小巧，功能丰富的JavaScript库。它通过易于使用的API在大量浏览器中运行，使得HTML文档遍历和操作，事件处理，动画和Ajax更加简单-->
     <script type="text/javascript" th:src="@{/js/vendor/jquery-1.12.4.min.js}"></script>
-    <!--Bootstrap-->
+    <!-- Bootstrap 世界上最受欢迎的前端组件库在Web上构建响应迅速，移动优先的项目
+    Bootstrap是一个用于使用HTML，CSS和JS进行开发的开源工具包。使用我们的Sass变量和mixins，
+    响应式网格系统，广泛的预构建组件以及基于jQuery构建的强大插件，快速构建您的想法或构建整个应用程序-->
     <script type="text/javascript" th:src="@{/js/vendor/bootstrap.min.js}"></script>
-    <!--jQuery幻灯片插件OWL Carousel-->
+    <!--OWL Carousel 触控启用的jQuery插件，可让您创建一个漂亮的响应式轮播滑块-->
     <script type="text/javascript" th:src="@{/js/vendor/owl.carousel.min.js}"></script>
-    <!--Slick jquery旋转木马插件-->
+    <!--Slick 一个jQuery响应式触摸旋转木马-->
     <script type="text/javascript" th:src="@{/js/vendor/slick.min.js}"></script>
-    <!--Meanmenu响应式移动菜单插件-->
+    <!-- Meanmenu 响应式移动菜单插件 主要特点
+    隐藏或显示菜单子项
+    目标导航元素与MeanMenu交换
+    方向调整(当您倾斜设备时，居中菜单将重新定位)
+    控制屏幕宽度，MeanMenu激活
+    扩展/折叠子导航
+    捆绑了可配置的CSS
+    快速设置和配置
+    媒体查询独立-->
     <script type="text/javascript" th:src="@{/js/vendor/jquery.meanmenu.min.js}"></script>
-    <!--Venobox VenoBox jQuery灯箱插件-->
+    <!--Nice Select 一个轻量级的jQuery插件，用可自定义的下拉列表替换原生的select元素。-->
+    <script type="text/javascript" th:src="@{/js/vendor/jquery.nice-select.min.js}"></script>
+    <!-- Venobox 响应式jQuery Lightbox灯箱插件，适用于图像，内联内容，iFrame，Google-Maps，Ajax请求，Vimeo和YouTube视频-->
     <script type="text/javascript" th:src="@{/js/vendor/venobox.min.js}"></script>
     <!--Main Js 必须放到最后面-->
     <script type="text/javascript" th:src="@{/js/main.js}"></script>
