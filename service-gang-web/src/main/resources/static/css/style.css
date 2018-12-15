@@ -1865,10 +1865,10 @@ Common Style CSS
     transition: all 0.3s ease-in-out;
 }
 .hero-slider.hero-slider-3 .owl-nav > div {
-    background-image: url(../img/icon/slider-left-hover.png) !important;
+    background-image: url(../img/icon/slider-left.png) !important;
 }
 .hero-slider.hero-slider-3 .owl-nav > .owl-next{
-    background-image: url(../img/icon/slider-right-hover.png) !important;
+    background-image: url(../img/icon/slider-right.png) !important;
 }
 .testimonial-active .owl-nav > div{
     left: 0;
