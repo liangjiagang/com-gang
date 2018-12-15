@@ -1,0 +1,8 @@
+#rabbitmq配置
+spring:
+  rabbitmq:
+    host: localhost
+    password: cloud
+    port: 5672
+    username: cloud
+    virtual-host: /cloud
