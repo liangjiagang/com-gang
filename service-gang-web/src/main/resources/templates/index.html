@@ -19,7 +19,8 @@
     <!-- Linearicon 矢量线图标包-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/linearicons.min.css}">
     <!-- Font Awesome 网络上最受欢迎的图标集和工具包，在您的网站上获取矢量图标和社交徽标-->
-    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/font-awesome.min.css}">
+    <!--<link rel="stylesheet" type="text/css" th:href="@{/css/vendor/font-awesome.min.css}">-->
+    <link rel="stylesheet" type="text/css" th:href="@{http://www.jq22.com/jquery/font-awesome.4.6.0.css}">
     <!-- Animate.css 是一个有趣的，跨浏览器的css3动画库-->
     <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/animate.css}">
     <!--OWL Carousel 触控启用的jQuery插件，可让您创建一个漂亮的响应式轮播滑块-->
@@ -67,7 +68,7 @@
                         <div class="container header-inner">
                             <div class="row">
                                 <!--Header Logo Start-->
-                                <div class="col-lg-3 col-md-3">
+                                <div class="col-lg-2 col-md-2">
                                     <div class="logo-area">
                                         <a href="/">
                                             <img th:src="@{img/logo/logo-301.png}" alt="">
@@ -75,8 +76,20 @@
                                     </div>
                                 </div>
                                 <!--Header Logo End-->
+                                <div class="col-lg-4 col-md-4">
+                                    <!--Header Search Area-->
+                                    <div class="header-search-area">
+                                        <form action="#">
+                                            <div class="form-input">
+                                                <input name="search" id="search" placeholder="" value="Search..." onblur="if(this.value==''){this.value='Search...'}" onfocus="if(this.value=='Search...'){this.value=''}" type="text">
+                                                <button type="submit" class="header-search-btn"><i class="fa fa-search"></i></button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <!--Header Search Area-->
+                                </div>
                                 <!--Header Menu And Mini Cart Start-->
-                                <div class="col-lg-9 col-md-9 text-lg-right">
+                                <div class="col-lg-6 col-md-6 text-lg-right">
                                     <!--Main Menu Area Start-->
                                     <div class="header-menu">
                                         <nav>
@@ -92,7 +105,6 @@
                                             </ul>
                                         </nav>
                                     </div>
-                                    <!--Main Menu Area End-->
                                 </div>
                                 <!--Header Menu And Mini Cart End-->
                             </div>
@@ -111,7 +123,7 @@
         <!--Header Area End-->
         <!--Slider Area Start-->
         <div class="slider-area">
-            <div class="hero-slider hero-slider-3 owl-carousel">
+            <div class="hero-slider owl-carousel">
                 <!--Single Slider Start-->
                 <div class="single-slider slider-style-3" style="background-image: url(/img/slider/index-002.png)">
                     <div class="slider-progress"></div>
