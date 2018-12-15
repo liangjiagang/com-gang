@@ -646,7 +646,7 @@ $('.category-menu-list').on('click', 'li a, li a .menu-expand', function(e) {
 /*--------------------------------
     Price Slider Active
 -------------------------------- */
-var sliderrange = $('#slider-range');
+/*var sliderrange = $('#slider-range');
 var amountprice = $('#amount');
 $(function() {
     sliderrange.slider({
@@ -660,7 +660,7 @@ $(function() {
     });
     amountprice.val("$" + sliderrange.slider("values", 0) +
         " - $" + sliderrange.slider("values", 1));
-});
+});*/
 /*------------------------------ 
     Nice Select Active
 ---------------------------------*/
