@@ -115,7 +115,6 @@
                     <div class="slider-progress"></div>
                     <div class="container">
                         <div class="hero-slider-content hero-slider-content-3">
-
                         </div>
                     </div>
                 </div>
@@ -136,7 +135,8 @@
 
 
     <!--注意js加载的顺序问题-->
-    <!--Jquery 1.12.4 是一个快速，小巧，功能丰富的JavaScript库。它通过易于使用的API在大量浏览器中运行，使得HTML文档遍历和操作，事件处理，动画和Ajax更加简单-->
+    <!--Jquery 1.12.4 是一个快速，小巧，功能丰富的JavaScript库。它通过易于使用的API在大量浏览器中运行，
+    使得HTML文档遍历和操作，事件处理，动画和Ajax更加简单-->
     <script type="text/javascript" th:src="@{/js/vendor/jquery-1.12.4.min.js}"></script>
     <!--Popper 用于管理WEB应用程序中的POPPERS的KICKASS库-->
     <script type="text/javascript" th:src="@{/js/vendor/popper.min.js}"></script>
@@ -176,8 +176,14 @@
     <!--ScrollUp 它能够让用户滚动条滚动到一定的位置时（可设置），右下角出现“滚动到顶部”的按钮，点击后，
     页面就是慢慢的滚动到顶部，而不是硬生生的直接回到顶部，提高了用户体验-->
     <script type="text/javascript" th:src="@{/js/vendor/jquery.scrollUp.min.js}"></script>
+    <!--Wow 是一款帮助你实现滚动页面时触发CSS 动画效果的插件-->
+    <script type="text/javascript" th:src="@{/js/vendor/wow.min.js}"></script>
     <!-- Venobox 响应式jQuery Lightbox灯箱插件，适用于图像，内联内容，iFrame，Google-Maps，Ajax请求，Vimeo和YouTube视频-->
     <script type="text/javascript" th:src="@{/js/vendor/venobox.min.js}"></script>
+    <!--Countdown jQuery活动倒计时插件-->
+    <script type="text/javascript" th:src="@{/js/vendor/countdown.min.js}"></script>
+    <!--Plugins 没看懂里面有些ajax和console-->
+    <script  type="text/javascript" th:src="@{/js/vendor/plugins.js}"></script>
     <!--Main Js 必须放到最后面-->
     <script type="text/javascript" th:src="@{/js/main.js}"></script>
 

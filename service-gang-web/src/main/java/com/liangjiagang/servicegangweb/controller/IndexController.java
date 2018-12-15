@@ -43,11 +43,11 @@ public class IndexController {
         List<MainMenuVO> list1 = new ArrayList<>();
         MainMenuVO mainMenuVO6 = new MainMenuVO();
         mainMenuVO6.setId("10020100");
-        mainMenuVO6.setText("首页");
+        mainMenuVO6.setText("spring cloud");
         mainMenuVO6.setHref("/");
         MainMenuVO mainMenuVO7 = new MainMenuVO();
         mainMenuVO7.setId("10020200");
-        mainMenuVO7.setText("进化笔记");
+        mainMenuVO7.setText("java");
         mainMenuVO7.setHref("/");
         list1.add(mainMenuVO6);
         list1.add(mainMenuVO7);
