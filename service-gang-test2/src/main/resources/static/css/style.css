@@ -681,7 +681,7 @@ Common Style CSS
     overflow: visible;
 }
 .vbox-close {
-    background: #abd373 url("../img/lightbox/close.png ") no-repeat scroll 10px center !important;
+    background: #abd373 url(../img/lightbox/close.png) no-repeat scroll 10px center !important;
     color: #fff !important;
     cursor: pointer;
     display: block;
@@ -1410,6 +1410,7 @@ Common Style CSS
 .switcher-dropdown > li{
     list-style: none;
     display: block;
+    /*border-bottom: 0 10px;*/
     text-align: center;
     border-bottom: 1px solid #e5e5e5;
 }
@@ -5798,8 +5799,10 @@ a.ideas-btn:hover{
     background-color: #f6f6f6;
 }
 .service-bg-1 {
+    background-image: url(../img/bg/service-bg2.jpg);
+    background-position: center center;
     background-size: cover;
-    background: url(../img/bg/service-bg2.jpg) no-repeat center center;
+    background-repeat: no-repeat;
 }
 .single-pricing {
     background: #fff;
@@ -5873,8 +5876,10 @@ a.ideas-btn:hover{
 }
 /*What We Do Area CSS */
 .service-bg-2 {
+    background-image: url(../img/bg/service-bg3.jpg);
+    background-position: center center;
     background-size: cover;
-    background: url(../img/bg/service-bg3.jpg) no-repeat center center;
+    background-repeat: no-repeat;
 }
 .what-we-do-title > h2 {
     font-size: 30px;
@@ -6351,7 +6356,7 @@ a.ideas-btn:hover{
 }
 .content > .portfolio-icon > a:nth-child(1){
     -webkit-transition-delay: 0ms;
-    transition-delay: 0ms ;
+    transition-delay: 0ms;
 }
 .content > .portfolio-icon > a:nth-child(2){
     -webkit-transition-delay: 0.2s;
