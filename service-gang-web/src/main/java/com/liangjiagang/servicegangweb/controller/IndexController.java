@@ -25,7 +25,7 @@ public class IndexController {
         mainMenuVO1.setHref("/");
         MainMenuVO mainMenuVO2 = new MainMenuVO();
         mainMenuVO2.setId("10020000");
-        mainMenuVO2.setText("进化笔记");
+        mainMenuVO2.setText("进化文档");
         mainMenuVO2.setHref("/");
         MainMenuVO mainMenuVO3 = new MainMenuVO();
         mainMenuVO3.setId("10030000");
@@ -51,7 +51,7 @@ public class IndexController {
         mainMenuVO7.setHref("/");
         list1.add(mainMenuVO6);
         list1.add(mainMenuVO7);
-        mainMenuVO2.setList(list1);
+        mainMenuVO3.setList(list1);
 
         list.add(mainMenuVO1);
         list.add(mainMenuVO2);
