@@ -1,5 +1,5 @@
 
-#zuul路径映射，/routes?format=details查看映射信息
+#zuul路径映射，/routes?format=details查看映射信息,只能做服务转发,不能做页面转发,会找不到静态文件
 zuul:
   routes:
     api-a:
@@ -14,6 +14,9 @@ zuul:
     api-d:
       path: /**
       serviceId: service-gang-web
+      stripPrefix: true
+      sensitiveHeaders: Cookie,Set-Cookie,Authorization
+  add-host-header: true   # 此处解决后端服务重定向导致用户浏览的 host 变成 后端服务的 host 问题
 
 
 #rabbitmq配置

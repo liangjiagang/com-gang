@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>进化文档 || liangjiagang</title>
+    <!-- 在根目录中放置FavigICO.ICO -->
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/img/favicon.ico}">
+
+    <!--时刻注意加载顺序问题-->
+    <!--All Css Here-->
+    <!-- Bootstrap 世界上最受欢迎的前端组件库在Web上构建响应迅速，移动优先的项目
+    Bootstrap是一个用于使用HTML，CSS和JS进行开发的开源工具包。使用我们的Sass变量和mixins，
+    响应式网格系统，广泛的预构建组件以及基于jQuery构建的强大插件，快速构建您的想法或构建整个应用程序-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/bootstrap.min.css}" >
+    <!-- Linearicon 矢量线图标包-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/linearicons.min.css}">
+    <!-- Font Awesome 网络上最受欢迎的图标集和工具包，在您的网站上获取矢量图标和社交徽标-->
+    <!--<link rel="stylesheet" type="text/css" th:href="@{/css/vendor/font-awesome.css}">--><!--不知道为什么加载不出来图标-->
+    <link rel="stylesheet" type="text/css" th:href="@{http://www.jq22.com/jquery/font-awesome.4.6.0.css}">
+    <!-- Animate.css 是一个有趣的，跨浏览器的css3动画库-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/animate.css}">
+    <!--OWL Carousel 触控启用的jQuery插件，可让您创建一个漂亮的响应式轮播滑块-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/owl.carousel.min.css}">
+    <!-- Slick 一个jQuery响应式触摸旋转木马-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/slick.css}">
+    <!-- Meanmenu 响应式移动菜单插件 主要特点
+    隐藏或显示菜单子项
+    目标导航元素与MeanMenu交换
+    方向调整（当您倾斜设备时，居中菜单将重新定位）
+    控制屏幕宽度，MeanMenu激活
+    扩展/折叠子导航
+    捆绑了可配置的CSS
+    快速设置和配置
+    媒体查询独立-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/meanmenu.min.css}">
+    <!-- EasyZoom 是一个优雅,高度优化的jQuery插件支持图像缩放和平移基于源图放大。easyzoom还支持触摸功能的设备，并与CSS很容易定制-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/easyzoom.css}">
+    <!-- Venobox 响应式jQuery Lightbox灯箱插件，适用于图像，内联内容，iFrame，Google-Maps，Ajax请求，Vimeo和YouTube视频-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/venobox.css}">
+    <!-- Jquery Ui 是一组精心设计的用户界面交互，效果，小部件和构建在jQuery JavaScript库之上的主题-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/jquery-ui.css}" >
+    <!-- Nice Select 一个轻量级的jQuery插件，用可自定义的下拉列表替换原生的select元素-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/nice-select.css}">
+    <!-- Style 自定义样式-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <!-- Responsive 为bootstrap实现响应式效果-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/responsive.css}">
+
+    <!--加载顺序问题,必须放在head里引用-->
+    <!-- Modernizr  以轻松提供分层体验：利用支持它们的浏览器中的最新和最强大的功能，而不会让不那么幸运的用户高低干燥-->
+    <script type="text/javascript" th:src="@{/js/vendor/modernizr-2.8.3.min.js}"></script>
+
+</head>
+<body>
+<div class="wrapper">
+    <!--Header Area Start-->
+    <header>
+        <div class="header-container">
+            <div class="header-area header-sticky pt-30 pb-30">
+                <div class="container">
+                    <div class="row">
+                        <!--Header Logo Start-->
+                        <div class="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                            <div class="logo-area">
+                                <a href="/">
+                                    <img th:src="@{img/logo/logo-301.png}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <!--Header Logo End-->
+                        <!--Header Search Area-->
+                        <div class="col-10 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                            <div class="header-search-area">
+                                <form action="#">
+                                    <div class="form-input">
+                                        <input name="search" id="search" placeholder="" value="Search..." onblur="if(this.value==''){this.value='Search...'}" onfocus="if(this.value=='Search...'){this.value=''}" type="text">
+                                        <button type="submit" class="header-search-btn"><i class="fa fa-search"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <!--Header Search Area-->
+                        <!--Header Menu And Mini Cart Start-->
+                        <div class="col-2 col-sm-6 col-md-6 col-lg-6 col-xl-6 text-lg-right">
+                            <!--Main Menu Area Start-->
+                            <div class="header-menu">
+                                <nav>
+                                    <ul class="main-menu">
+                                        <li th:each="main_menu_vo1,iterStat1 : ${main_menu_list}">
+                                            <a  th:href="${main_menu_vo1.href}" th:text="${main_menu_vo1.text}"></a>
+                                            <ul class="dropdown" th:if="${main_menu_vo1.list}">
+                                                <li th:each="main_menu_vo2,iterStat2 : ${main_menu_vo1.list}">
+                                                    <a  th:href="${main_menu_vo2.href}" th:text="${main_menu_vo2.text}"></a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!--Header Menu And Mini Cart End-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+<!--注意js加载的顺序问题-->
+<!--Jquery 1.12.4 是一个快速，小巧，功能丰富的JavaScript库。它通过易于使用的API在大量浏览器中运行，
+使得HTML文档遍历和操作，事件处理，动画和Ajax更加简单-->
+<script type="text/javascript" th:src="@{/js/vendor/jquery-1.12.4.min.js}"></script>
+<!--Popper 用于管理WEB应用程序中的POPPERS的KICKASS库-->
+<script type="text/javascript" th:src="@{/js/vendor/popper.min.js}"></script>
+<!--Bootstrap 世界上最受欢迎的前端组件库在Web上构建响应迅速，移动优先的项目
+Bootstrap是一个用于使用HTML，CSS和JS进行开发的开源工具包。使用我们的Sass变量和mixins，
+响应式网格系统，广泛的预构建组件以及基于jQuery构建的强大插件，快速构建您的想法或构建整个应用程序-->
+<script type="text/javascript" th:src="@{/js/vendor/bootstrap.min.js}"></script>
+<!--Imagesloaded 是一个用于来检测网页中的图片是否载入完成JavaScript工具库。支持回调的获取图片加载的进度，
+还可以绑定自定义事件。可以结合 jQuery、RequireJS 使用-->
+<script type="text/javascript" th:src="@{/js/vendor/imagesloaded.pkgd.min.js}"></script>
+<!--Isotope 是一款效果非常神奇的元素分类过滤和排序布局jQuery插件。Isotope是Masonry布局的作者David DeSandro的一款力作，
+该分类过滤和排序插件允许你以非常简单和炫酷的方式来隐藏和显示元素，以及对元素按照指定的规则进行排序。-->
+<script type="text/javascript" th:src="@{/js/vendor/isotope.pkgd.min.js}"></script>
+<!--Waypoints 用于捕获各种滚动事件的插件&&还支持固定元素和无限滚动的功能，功力十分强大-->
+<script type="text/javascript" th:src="@{/js/vendor/waypoints.min.js}"></script>
+<!--Counterup 是一款轻量级jquery数字动画插件。该数字动画插件可以在页面滚动时，将指定的数字从0开始计数增加动画。
+该数字动画插件可以控制动画的延迟时间和动画过渡时间。它依赖于Waypoints插件来监听滚动事件-->
+<script type="text/javascript" th:src="@{/js/vendor/jquery.counterup.min.js}"></script>
+<!--OWL Carousel 触控启用的jQuery插件，可让您创建一个漂亮的响应式轮播滑块-->
+<script type="text/javascript" th:src="@{/js/vendor/owl.carousel.min.js}"></script>
+<!--Slick 一个jQuery响应式触摸旋转木马-->
+<script type="text/javascript" th:src="@{/js/vendor/slick.min.js}"></script>
+<!-- Meanmenu 响应式移动菜单插件 主要特点
+隐藏或显示菜单子项
+目标导航元素与MeanMenu交换
+方向调整(当您倾斜设备时，居中菜单将重新定位)
+控制屏幕宽度，MeanMenu激活
+扩展/折叠子导航
+捆绑了可配置的CSS
+快速设置和配置
+媒体查询独立-->
+<script type="text/javascript" th:src="@{/js/vendor/jquery.meanmenu.min.js}"></script>
+<!-- EasyZoom 是一个优雅,高度优化的jQuery插件支持图像缩放和平移基于源图放大。easyzoom还支持触摸功能的设备，并与CSS很容易定制-->
+<script type="text/javascript" th:src="@{/js/vendor/easyzoom.min.js}"></script>
+<!--Nice Select 一个轻量级的jQuery插件，用可自定义的下拉列表替换原生的select元素。-->
+<script type="text/javascript" th:src="@{/js/vendor/jquery.nice-select.min.js}"></script>
+<!--ScrollUp 它能够让用户滚动条滚动到一定的位置时（可设置），右下角出现“滚动到顶部”的按钮，点击后，
+页面就是慢慢的滚动到顶部，而不是硬生生的直接回到顶部，提高了用户体验-->
+<script type="text/javascript" th:src="@{/js/vendor/jquery.scrollUp.min.js}"></script>
+<!--Wow 是一款帮助你实现滚动页面时触发CSS 动画效果的插件-->
+<script type="text/javascript" th:src="@{/js/vendor/wow.min.js}"></script>
+<!-- Venobox 响应式jQuery Lightbox灯箱插件，适用于图像，内联内容，iFrame，Google-Maps，Ajax请求，Vimeo和YouTube视频-->
+<script type="text/javascript" th:src="@{/js/vendor/venobox.min.js}"></script>
+<!--Countdown jQuery活动倒计时插件-->
+<script type="text/javascript" th:src="@{/js/vendor/jquery.countdown.min.js}"></script>
+<!--Plugins 没看懂里面有些ajax和console-->
+<script  type="text/javascript" th:src="@{/js/plugins.js}"></script>
+<!--Main Js 必须放到最后面-->
+<script type="text/javascript" th:src="@{/js/main.js}"></script>
+
+</body>
+</html>

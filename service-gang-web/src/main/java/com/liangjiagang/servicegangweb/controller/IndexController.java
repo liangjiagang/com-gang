@@ -26,7 +26,7 @@ public class IndexController {
         MainMenuVO mainMenuVO2 = new MainMenuVO();
         mainMenuVO2.setId("10020000");
         mainMenuVO2.setText("进化文档");
-        mainMenuVO2.setHref("/");
+        mainMenuVO2.setHref("/evolutiondoc");
         MainMenuVO mainMenuVO3 = new MainMenuVO();
         mainMenuVO3.setId("10030000");
         mainMenuVO3.setText("排行榜");
@@ -61,6 +61,13 @@ public class IndexController {
 
         modeMap.put("main_menu_list",list);
         return "index";
+    }
+
+
+    @RequestMapping(value = "/evolutiondoc")
+    public String evolutiondoc(ModelMap modeMap) {
+
+        return "evolutiondoc";
     }
 
 }
