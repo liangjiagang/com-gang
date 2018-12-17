@@ -3895,7 +3895,7 @@ li.right-menu .cat-mega-menu > li {
     background-color: #f4f4f4;
     padding: 25px 0 20px 0;
 }
-.breadcrumb-title > h2 {
+.breadcrumb-title > h1 {
     font-size: 50px;
     text-align: center;
     color: #000;
@@ -6283,7 +6283,7 @@ a.ideas-btn:hover{
     font-weight: 600;
     text-transform: capitalize;
     line-height: 45px;
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     margin-right: 1px;
     padding: 0 30px;
     position: relative;
