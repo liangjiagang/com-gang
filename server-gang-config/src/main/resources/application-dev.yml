@@ -6,7 +6,7 @@ eureka:
     instance-id: ${spring.application.name}:${random.int}
 
 server:
-  port: 0
+  port: 10023
 spring:
   #profiles:
     #active: native #开启本地配置文件
@@ -14,6 +14,9 @@ spring:
     name: server-gang-config #这在以后的服务与服务之间相互调用一般都是根据这个name
     index: ${eureka.instance.instance-id}
   cloud:
+    bus: #消息总线配置,/bus/refresh全部刷新，/bus/refresh?destination=customers:** 即刷新服务名为customers的所有服务，/bus/env发送键/值对来更新每个节点的环境
+      trace: #要使用POST请求刷新
+        enabled: true #/trace查看bus事件
     config:
       server: #config-server不能使用配置中心，原因是项目启动时不去加载配置文件，同时也不能是用springboot多环境启动，开启本地占用了active，尚不知道git方式能不能用
         #native:
@@ -27,6 +30,9 @@ spring:
       label: master #配置文件所在的分支
 
 
-
+management:
+  security:
+    enabled: false
+    #enabled: true #bus刷新时，开启安全验证
 
 

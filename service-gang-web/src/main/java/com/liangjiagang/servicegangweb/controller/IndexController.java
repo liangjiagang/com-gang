@@ -63,11 +63,4 @@ public class IndexController {
         return "index";
     }
 
-
-    @RequestMapping(value = "/evolutiondoc")
-    public String evolutiondoc(ModelMap modeMap) {
-
-        return "evolutiondoc";
-    }
-
 }

@@ -35,6 +35,12 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
+        <!--消息总线-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bus-amqp</artifactId>
+        </dependency>
+
         <!--监控系统健康情况的工具-->
         <!--应用配置类/configprops /autoconfig /beans /env /info /mappings-->
         <!--度量指标类/dump /health-->
