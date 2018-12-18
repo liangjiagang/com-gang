@@ -1,6 +1,8 @@
 package com.liangjiagang.servicegangweb.controller;
 
 import com.liangjiagang.servicegangweb.data.vo.MainMenuVO;
+import com.liangjiagang.servicegangweb.data.vo.ProtfolioMenuVO;
+import com.liangjiagang.servicegangweb.service.EvolutionDocService;
 import com.liangjiagang.servicegangweb.service.IndexService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,11 +21,17 @@ public class EvolutionDocController {
     @Autowired
     private IndexService indexService;
 
+    @Autowired
+    private EvolutionDocService evolutionDocService;
 
     @RequestMapping(value = "/evolutiondoc")
     public String evolutionDoc(ModelMap modelMap){
         List<MainMenuVO> mainMenuList = indexService.getMainMenuList();
         modelMap.put("main_menu_list",mainMenuList);
+        List<ProtfolioMenuVO> protMenuList = evolutionDocService.getProtMenuList("1");
+        modelMap.put("protf_menu_list",protMenuList);
+        modelMap.put("protf_all_num",10000);
+
         return "evolutiondoc";
     }
 

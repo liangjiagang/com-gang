@@ -696,25 +696,25 @@ $('select').niceSelect();
 /*--------------------------
     Isotope Active
 ---------------------------- */
-$('.protfolio-active').imagesLoaded( function() {
+/*    $('.protfolio-active').imagesLoaded( function() {
 // images have loaded
-    // init Isotope
-    var $grid = $('.protfolio-active').isotope({
-      // options
-    });
-    // filter items on button click
-    $('.protfolio-menu-active').on( 'click', 'li', function(event) {
-          event.preventDefault();
-      var filterValue = $(this).attr('data-filter');
-      $grid.isotope({ filter: filterValue });
+        // init Isotope
+        var $grid = $('.protfolio-active').isotope({
+            // options
+        });
+        // filter items on button click
+        $('.protfolio-menu-active').on( 'click', 'li', function(event) {
+            event.preventDefault();
+            var filterValue = $(this).attr('data-filter');
+            $grid.isotope({ filter: filterValue });
 
-          $(this).siblings('.active').removeClass('active');
-          $(this).addClass('active');
-    });
-});  
-/* --------------------------------------------------------
-    Venobox Active
-* -------------------------------------------------------*/  
+            $(this).siblings('.active').removeClass('active');
+            $(this).addClass('active');
+        });
+    });*/
+    /* --------------------------------------------------------
+        Venobox Active
+    * -------------------------------------------------------*/
   $('.venobox').venobox({
         border: '10px',
         titleattr: 'data-title',

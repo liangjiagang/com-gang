@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
     <title>进化文档 || liangjiagang</title>
     <!-- 在根目录中放置FavigICO.ICO -->
-    <link rel="shortcut icon" type="image/x-icon" th:href="@{/img/favicon.ico}">
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/img/icon/favicon.ico}">
 
     <!--时刻注意加载顺序问题-->
     <!--All Css Here-->
@@ -138,9 +138,10 @@
                 <div class="col-12 col-sm-10 col-md-10 col-lg-10 col-xl-10 offset-sm-1 offset-md-1 offset-lg-1 offset-xl-1">
                     <div class="protfolio-menu">
                         <ul class="protfolio-menu-active">
-                            <li class="active" data-filter="*">all <span>(20)</span></li>
-                            <li data-filter=".company">Company <span>(11)</span></li>
-                            <li data-filter=".computers">Computers <span>(4)</span></li>
+                            <li class="active" data-value="protf_menu_all">all <span th:text="'('+${protf_all_num}+')'"></span></li>
+                            <li data-value="*" th:each="protf_menu_vo,iterStat : ${protf_menu_list}" th:attr="data-value=${protf_menu_vo.data_value}" th:text="${protf_menu_vo.text}+'('+${protf_menu_vo.num}+')'"></li>
+                            <li th:attr="data-value=${protf_last_num}">上一批</li>
+                            <li th:attr="data-value=${protf_next_num}">下一批</li>
                         </ul>
                     </div>
                 </div>
@@ -202,6 +203,8 @@ Bootstrap是一个用于使用HTML，CSS和JS进行开发的开源工具包。�
 <script  type="text/javascript" th:src="@{/js/plugins.js}"></script>
 <!--Main Js 必须放到最后面-->
 <script type="text/javascript" th:src="@{/js/main.js}"></script>
+<!--evolutiondoc Js 必须放到最后面-->
+<script type="text/javascript" th:src="@{/js/evolutiondoc.js}"></script>
 
 </body>
 </html>

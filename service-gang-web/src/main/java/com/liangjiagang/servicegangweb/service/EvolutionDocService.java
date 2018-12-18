@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface EvolutionDocService {
 
-    List<ProtfolioMenuVO> getProtMenuList(String text);
+    List<ProtfolioMenuVO> getProtMenuList(String page);
 
 }

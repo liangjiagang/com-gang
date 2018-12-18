@@ -4,8 +4,8 @@ public class ProtfolioMenuVO {
 
     private String id;
     private String text;
-    private String url;
-    private String value;
+    private String data_value;
+    private String num;
 
     public String getId() {
         return id;
@@ -23,20 +23,20 @@ public class ProtfolioMenuVO {
         this.text = text;
     }
 
-    public String getUrl() {
-        return url;
+    public String getData_value() {
+        return data_value;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setData_value(String data_value) {
+        this.data_value = data_value;
     }
 
-    public String getValue() {
-        return value;
+    public String getNum() {
+        return num;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setNum(String num) {
+        this.num = num;
     }
 
     @Override
@@ -44,8 +44,8 @@ public class ProtfolioMenuVO {
         return "ProtfolioMenuVO{" +
                 "id='" + id + '\'' +
                 ", text='" + text + '\'' +
-                ", url='" + url + '\'' +
-                ", value='" + value + '\'' +
+                ", data_value='" + data_value + '\'' +
+                ", num='" + num + '\'' +
                 '}';
     }
 }
