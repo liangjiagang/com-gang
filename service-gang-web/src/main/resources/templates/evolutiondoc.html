@@ -138,10 +138,11 @@
                 <div class="col-12 col-sm-10 col-md-10 col-lg-10 col-xl-10 offset-sm-1 offset-md-1 offset-lg-1 offset-xl-1">
                     <div class="protfolio-menu">
                         <ul class="protfolio-menu-active">
-                            <li class="active" data-value="protf_menu_all">all <span th:text="'('+${protf_all_num}+')'"></span></li>
-                            <li data-value="*" th:each="protf_menu_vo,iterStat : ${protf_menu_list}" th:attr="data-value=${protf_menu_vo.data_value}" th:text="${protf_menu_vo.text}+'('+${protf_menu_vo.num}+')'"></li>
-                            <li th:attr="data-value=${protf_last_num}">上一批</li>
-                            <li th:attr="data-value=${protf_next_num}">下一批</li>
+                            <li class="active" data-value="protf_menu_all">all<span th:text="'('+${protf_all_num}+')'"></span></li>
+                            <li data-value="*" th:each="protf_menu_vo,iterStat : ${protf_menu_list}"
+                                th:attr="data-value=${protf_menu_vo.data_value}" th:text="${protf_menu_vo.text}+'('+${protf_menu_vo.num}+')'"></li>
+                            <li th:attr="data-text=${protf_last_num}" data-value="protf_menu_last">上一批</li>
+                            <li th:attr="data-text=${protf_next_num}" data-value="protf_menu_next">下一批</li>
                         </ul>
                     </div>
                 </div>
@@ -149,6 +150,54 @@
         </div>
     </div>
     <!--Protfolio Menu End-->
+    <!--Protfolio Item Start-->
+    <div class="protfolio-item mb-80">
+        <div class="container-fluid">
+            <div class="row protfolio-active">
+                <!--Single Protfolio Start-->
+                <div class="col-md-6 col-lg-4 col-xl-3 grid-item company">
+                    <div class="single-protfolio">
+                        <div class="protfolio-img img-full">
+                            <img src="img/portfolio/portfolio1.jpg" alt="">
+                            <div class="content">
+                                <div class="portfolio-icon">
+                                    <a href="portfolio-details.html">
+                                        <i class="fa fa-link"></i>
+                                    </a>
+                                    <a class="venobox" data-gall="myGallery" href="img/portfolio/portfolio1.jpg">
+                                        <i class="fa fa-search"></i>
+                                    </a>
+                                </div>
+                                <div class="title">Coffee & Cookie Time</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Single Protfolio End-->
+                <!--Single Protfolio Start-->
+                <div class="col-md-6 col-lg-4 col-xl-3 grid-item computers general">
+                    <div class="single-protfolio">
+                        <div class="protfolio-img img-full">
+                            <img src="img/portfolio/portfolio2.jpg" alt="">
+                            <div class="content">
+                                <div class="portfolio-icon">
+                                    <a href="portfolio-details.html">
+                                        <i class="fa fa-link"></i>
+                                    </a>
+                                    <a class="venobox" data-gall="myGallery" href="img/portfolio/portfolio2.jpg">
+                                        <i class="fa fa-search"></i>
+                                    </a>
+                                </div>
+                                <div class="title">Doing it the Chilled Way</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Single Protfolio End-->
+            </div>
+        </div>
+    </div>
+    <!--Protfolio Item End-->
 </div>
 
 <!--注意js加载的顺序问题-->

@@ -53,7 +53,7 @@ public class IndexServiceImpl implements IndexService {
         mainMenuVO7.setId("10020200");
         mainMenuVO7.setText("java");
         mainMenuVO7.setHref("/");
-        list1.add(mainMenuVO6);
+        list1.add(mainMenuVO8);
         list1.add(mainMenuVO7);
         mainMenuVO3.setList(list1);
 
