@@ -6385,6 +6385,7 @@ a.ideas-btn:hover{
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     -webkit-transform: translateX(-50%) perspective(600px) rotateX(0deg);
     transform: translateX(-50%) perspective(600px) rotateX(0deg);
+    height: 100%;
 }
 .content > .title {
     font-size: 13px;

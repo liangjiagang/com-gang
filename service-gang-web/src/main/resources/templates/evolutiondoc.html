@@ -158,13 +158,13 @@
                 <div class="col-md-6 col-lg-4 col-xl-3 grid-item company">
                     <div class="single-protfolio">
                         <div class="protfolio-img img-full">
-                            <img src="img/portfolio/portfolio1.jpg" alt="">
+                            <div class="div_doc_msg"></div>
                             <div class="content">
                                 <div class="portfolio-icon">
-                                    <a href="portfolio-details.html">
+                                    <a th:href="@{index.html}">
                                         <i class="fa fa-link"></i>
                                     </a>
-                                    <a class="venobox" data-gall="myGallery" href="img/portfolio/portfolio1.jpg">
+                                    <a class="venobox" data-gall="myGallery" th:href="@{/img/evolutiondoc/portfolio1.jpg}">
                                         <i class="fa fa-search"></i>
                                     </a>
                                 </div>
@@ -178,13 +178,13 @@
                 <div class="col-md-6 col-lg-4 col-xl-3 grid-item computers general">
                     <div class="single-protfolio">
                         <div class="protfolio-img img-full">
-                            <img src="img/portfolio/portfolio2.jpg" alt="">
+                            <img  th:src="@{/img/evolutiondoc/portfolio2.jpg}" alt="">
                             <div class="content">
                                 <div class="portfolio-icon">
-                                    <a href="portfolio-details.html">
+                                    <a th:href="@{index.html}">
                                         <i class="fa fa-link"></i>
                                     </a>
-                                    <a class="venobox" data-gall="myGallery" href="img/portfolio/portfolio2.jpg">
+                                    <a class="venobox" data-gall="myGallery" th:href="@{/img/evolutiondoc/portfolio2.jpg}">
                                         <i class="fa fa-search"></i>
                                     </a>
                                 </div>
