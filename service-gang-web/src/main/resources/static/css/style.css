@@ -6298,6 +6298,7 @@ a.ideas-btn:hover{
 }
 .single-protfolio {
     position: relative;
+    height: 100%;
 }
 .single-protfolio .protfolio-img:before {
     background: rgba(0,0,0,0.65) none repeat scroll 0 0;
@@ -6315,6 +6316,7 @@ a.ideas-btn:hover{
 .single-protfolio:hover .protfolio-img:before {
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    height: 100%;
 }
 .content {
     position: absolute;
@@ -6385,7 +6387,6 @@ a.ideas-btn:hover{
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
     -webkit-transform: translateX(-50%) perspective(600px) rotateX(0deg);
     transform: translateX(-50%) perspective(600px) rotateX(0deg);
-    height: 100%;
 }
 .content > .title {
     font-size: 13px;
