@@ -6298,7 +6298,6 @@ a.ideas-btn:hover{
 }
 .single-protfolio {
     position: relative;
-    height: 100%;
 }
 .single-protfolio .protfolio-img:before {
     background: rgba(0,0,0,0.65) none repeat scroll 0 0;
@@ -6316,7 +6315,6 @@ a.ideas-btn:hover{
 .single-protfolio:hover .protfolio-img:before {
     opacity: 1;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-    height: 100%;
 }
 .content {
     position: absolute;

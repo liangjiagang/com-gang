@@ -137,7 +137,7 @@
             <div class="row">
                 <div class="col-12 col-sm-10 col-md-10 col-lg-10 col-xl-10 offset-sm-1 offset-md-1 offset-lg-1 offset-xl-1">
                     <div class="protfolio-menu">
-                        <ul class="protfolio-menu-active">
+                        <ul class="protfolio-menu-active" id="table_refresh" th:fragment="table_refresh">
                             <li class="active" data-value="protf_menu_all">all<span th:text="'('+${protf_all_num}+')'"></span></li>
                             <li data-value="*" th:each="protf_menu_vo,iterStat : ${protf_menu_list}"
                                 th:attr="data-value=${protf_menu_vo.data_value}" th:text="${protf_menu_vo.text}+'('+${protf_menu_vo.num}+')'"></li>
@@ -158,14 +158,17 @@
                 <div class="col-md-6 col-lg-4 col-xl-3 grid-item company">
                     <div class="single-protfolio">
                         <div class="protfolio-img img-full">
-                            <div class="div_doc_msg"></div>
+                            <div class="div_doc_msg">
+                                <h3>spring cloud 配置啊多少个热辐射地方撒范德萨范德萨的萨芬的撒啊</h3>
+                                <h5>作者: 休息休息</h5>
+                                <h5>时间: 2018-06-08 12:22:44</h5>
+                                <h5>点赞数: 21342</h5>
+                                <h5>版本个数: 5</h5>
+                            </div>
                             <div class="content">
                                 <div class="portfolio-icon">
                                     <a th:href="@{index.html}">
                                         <i class="fa fa-link"></i>
-                                    </a>
-                                    <a class="venobox" data-gall="myGallery" th:href="@{/img/evolutiondoc/portfolio1.jpg}">
-                                        <i class="fa fa-search"></i>
                                     </a>
                                 </div>
                             </div>

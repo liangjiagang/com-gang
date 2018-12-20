@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -28,11 +29,23 @@ public class EvolutionDocController {
     public String evolutionDoc(ModelMap modelMap){
         List<MainMenuVO> mainMenuList = indexService.getMainMenuList();
         modelMap.put("main_menu_list",mainMenuList);
-        List<ProtfolioMenuVO> protMenuList = evolutionDocService.getProtMenuList("1");
+        List<ProtfolioMenuVO> protMenuList = evolutionDocService.getProtMenuList("0");
         modelMap.put("protf_menu_list",protMenuList);
         modelMap.put("protf_all_num",10000);
+        modelMap.put("protf_next_num",1);
 
         return "evolutiondoc";
+    }
+
+    @RequestMapping(value = "/evolutiondoc/getprotmenu")
+    public String getProtMenu(ModelMap modelMap,@RequestBody String page){
+        List<ProtfolioMenuVO> protMenuList = evolutionDocService.getProtMenuList(page);
+        modelMap.put("protf_menu_list",protMenuList);
+        modelMap.put("protf_all_num",10000);
+        modelMap.put("protf_next_num", 1+Integer.valueOf(page));
+        modelMap.put("protf_last_num", 1-Integer.valueOf(page));
+
+        return "evolutiondoc::table_refresh";
     }
 
 
