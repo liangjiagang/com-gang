@@ -5,7 +5,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 public class ProtMenuVO {
 
-    @JsonProperty
+    @JsonProperty("page")
     @NotEmpty(message = "{user.name.notBlank}")
     private String page;
 

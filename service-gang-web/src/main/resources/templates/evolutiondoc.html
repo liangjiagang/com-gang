@@ -132,12 +132,12 @@
     </div>
     <!--Breadcrumb Tow End-->
     <!--Protfolio Menu Start-->
-    <div class="protfolio-menu-area">
+    <div class="protfolio-menu-area"  id="table_refresh" th:fragment="table_refresh">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-10 col-md-10 col-lg-10 col-xl-10 offset-sm-1 offset-md-1 offset-lg-1 offset-xl-1">
                     <div class="protfolio-menu">
-                        <ul class="protfolio-menu-active" id="table_refresh" th:fragment="table_refresh">
+                        <ul class="protfolio-menu-active">
                             <li class="active" data-value="protf_menu_all">all<span th:text="'('+${protf_all_num}+')'"></span></li>
                             <li data-value="*" th:each="protf_menu_vo,iterStat : ${protf_menu_list}"
                                 th:attr="data-value=${protf_menu_vo.data_value}" th:text="${protf_menu_vo.text}+'('+${protf_menu_vo.num}+')'"></li>

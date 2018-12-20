@@ -19,7 +19,7 @@
                     //contentType : false,// 告诉jQuery不要去设置Content-Type请求头
                     //processData: false,// 告诉jQuery不要去处理发送的数据
                     contentType: 'application/json;charset=utf-8',
-                    dataType: "json",
+                    //dataType: "json",
                     data: '{"page":'+data_text+'}', //注意是""
                     success: function(data){
                         $('#table_refresh').html(data);

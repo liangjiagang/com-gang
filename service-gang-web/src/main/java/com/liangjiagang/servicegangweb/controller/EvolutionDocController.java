@@ -13,7 +13,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -42,7 +41,6 @@ public class EvolutionDocController {
     }
 
     @RequestMapping(value = "/getprotmenu.do")
-    @ResponseBody
     public String getProtMenu(ModelMap modelMap, @RequestBody @Validated ProtMenuVO protMenuVO){
         List<ProtfolioMenuVO> protMenuList = evolutionDocService.getProtMenuList(protMenuVO.getPage());
         modelMap.put("protf_menu_list",protMenuList);
