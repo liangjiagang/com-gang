@@ -138,11 +138,12 @@
                 <div class="col-12 col-sm-10 col-md-10 col-lg-10 col-xl-10 offset-sm-1 offset-md-1 offset-lg-1 offset-xl-1">
                     <div class="protfolio-menu">
                         <ul class="protfolio-menu-active">
-                            <li class="active" data-value="protf_menu_all">all<span th:text="'('+${protf_all_num}+')'"></span></li>
+                            <li class="active" data-value="protf_menu_all" th:onclick="'javascript:editUser();'">all<span th:text="'('+${protf_all_num}+')'"></span></li>
                             <li data-value="*" th:each="protf_menu_vo,iterStat : ${protf_menu_list}"
-                                th:attr="data-value=${protf_menu_vo.data_value}" th:text="${protf_menu_vo.text}+'('+${protf_menu_vo.num}+')'"></li>
-                            <li th:attr="data-text=${protf_last_num}" data-value="protf_menu_last">上一批</li>
-                            <li th:attr="data-text=${protf_next_num}" data-value="protf_menu_next">下一批</li>
+                                th:attr="data-value=${protf_menu_vo.data_value}" th:text="${protf_menu_vo.text}+'('+${protf_menu_vo.num}+')'"
+                                th:onclick="'javascript:editUser();'"></li>
+                            <li th:attr="data-text=${protf_last_num}" data-value="protf_menu_last" th:onclick="'javascript:editUser();'">上一批</li>
+                            <li th:attr="data-text=${protf_next_num}" data-value="protf_menu_next" th:onclick="'javascript:editUser();'">下一批</li>
                         </ul>
                     </div>
                 </div>
