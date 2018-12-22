@@ -138,12 +138,12 @@
                 <div class="col-12 col-sm-10 col-md-10 col-lg-10 col-xl-10 offset-sm-1 offset-md-1 offset-lg-1 offset-xl-1">
                     <div class="protfolio-menu">
                         <ul class="protfolio-menu-active">
-                            <li class="active" data-value="protf_menu_all" th:onclick="'javascript:editUser();'">all<span th:text="'('+${protf_all_num}+')'"></span></li>
-                            <li data-value="*" th:each="protf_menu_vo,iterStat : ${protf_menu_list}"
+                            <li class="active" data-value="protf_menu_all" th:onclick="'javascript:getProtMenu();'">all<span th:text="'('+${protf_all_num}+')'"></span></li>
+                            <li th:each="protf_menu_vo,iterStat : ${protf_menu_list}"
                                 th:attr="data-value=${protf_menu_vo.data_value}" th:text="${protf_menu_vo.text}+'('+${protf_menu_vo.num}+')'"
-                                th:onclick="'javascript:editUser();'"></li>
-                            <li th:attr="data-text=${protf_last_num}" data-value="protf_menu_last" th:onclick="'javascript:editUser();'">上一批</li>
-                            <li th:attr="data-text=${protf_next_num}" data-value="protf_menu_next" th:onclick="'javascript:editUser();'">下一批</li>
+                                th:onclick="'javascript:getProtMenu();'"></li>
+                            <li th:attr="data-text=${protf_last_num}" data-value="protf_menu_last" th:onclick="'javascript:getProtMenu();'">上一批</li>
+                            <li th:attr="data-text=${protf_next_num}" data-value="protf_menu_next" th:onclick="'javascript:getProtMenu();'">下一批</li>
                         </ul>
                     </div>
                 </div>
@@ -160,39 +160,20 @@
                     <div class="single-protfolio">
                         <div class="protfolio-img img-full">
                             <div class="div_doc_msg">
-                                <h3 th:text="${doc_msg_vo.title}">spring cloud 配置啊多少个热辐射地方撒范德萨范德萨的萨芬的撒啊</h3>
-                                <h5 th:text="'作者: '+${doc_msg_vo.author}">作者: 休息休息</h5>
-                                <h5 th:text="'时间: '+${doc_msg_vo.time}">时间: 2018-06-08 12:22:44</h5>
-                                <h5 th:text="'点赞数: '+${doc_msg_vo.praise_num}">点赞数: 21342</h5>
-                                <h5 th:text="'版本个数: '+${doc_msg_vo.title}">版本个数: 5</h5>
-                                <h5 th:text="'价值: '+${doc_msg_vo.title}+'塔币'">价值: 5塔币</h5>
+                                <span id="doc_bag_id" th:text="${doc_bag_msg_vo.id}" th:hidden="true"></span>
+                                <h3 id="doc_bag_title" th:text="${doc_bag_msg_vo.title}">spring cloud 配置啊多少个热辐射地方撒范德萨范德萨的萨芬的撒啊</h3>
+                                <h5 id="doc_bag_author" th:text="'作者: '+${doc_bag_msg_vo.author}">作者: 休息休息</h5>
+                                <h5 id="doc_bag_update_time" th:text="'时间: '+${doc_bag_msg_vo.update_time}">时间: 2018-06-08 12:22:44</h5>
+                                <h5 id="doc_bag_praise_num" th:text="'点赞数: '+${doc_bag_msg_vo.praise_num}">点赞数: 21342</h5>
+                                <h5 id="doc_bag_version_num" th:text="'版本个数: '+${doc_bag_msg_vo.version_num}">版本个数: 5</h5>
+                                <h5 id="doc_bag_worth" th:text="'价值: '+${doc_bag_msg_vo.worth}+'塔币'">价值: 5塔币</h5>
                             </div>
                             <div class="content">
                                 <div class="portfolio-icon">
-                                    <a href="#">
+                                    <a href="#" th:onclick="'javascript:getDocDefault();'">
                                         <i class="fa fa-link"></i>
                                     </a>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!--Single Protfolio End-->
-                <!--Single Protfolio Start-->
-                <div class="col-md-6 col-lg-4 col-xl-3 grid-item company">
-                    <div class="single-protfolio">
-                        <div class="protfolio-img img-full">
-                            <div class="div_doc_msg"></div>
-                            <div class="content">
-                                <div class="portfolio-icon">
-                                    <a href="/">
-                                        <i class="fa fa-link"></i>
-                                    </a>
-                                    <a class="venobox" data-gall="myGallery" th:href="@{/img/evolutiondoc/portfolio1.jpg}">
-                                        <i class="fa fa-search"></i>
-                                    </a>
-                                </div>
-                                <div class="title">Coffee & Cookie Time</div>
                             </div>
                         </div>
                     </div>

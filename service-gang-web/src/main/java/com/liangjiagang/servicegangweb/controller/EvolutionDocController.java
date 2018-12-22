@@ -1,10 +1,12 @@
 package com.liangjiagang.servicegangweb.controller;
 
+import com.liangjiagang.servicegangweb.data.vo.EvolutiondocVO;
 import com.liangjiagang.servicegangweb.data.vo.MainMenuVO;
-import com.liangjiagang.servicegangweb.data.vo.ProtMenuVO;
 import com.liangjiagang.servicegangweb.data.vo.ProtfolioMenuVO;
 import com.liangjiagang.servicegangweb.service.EvolutionDocService;
 import com.liangjiagang.servicegangweb.service.IndexService;
+import com.liangjiagang.servicegangweb.validation.GetDocBagIntf;
+import com.liangjiagang.servicegangweb.validation.GetProtMenuIntf;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,14 +43,20 @@ public class EvolutionDocController {
     }
 
     @RequestMapping(value = "/getprotmenu.do")
-    public String getProtMenu(ModelMap modelMap, @RequestBody @Validated ProtMenuVO protMenuVO){
-        List<ProtfolioMenuVO> protMenuList = evolutionDocService.getProtMenuList(protMenuVO.getPage());
+    public String getProtMenu(ModelMap modelMap, @RequestBody @Validated({GetProtMenuIntf.class}) EvolutiondocVO evolutiondocVO){
+        List<ProtfolioMenuVO> protMenuList = evolutionDocService.getProtMenuList(evolutiondocVO.getPage());
         modelMap.put("protf_menu_list",protMenuList);
         modelMap.put("protf_all_num",10000);
-        modelMap.put("protf_next_num", 1+Integer.valueOf(protMenuVO.getPage()));
-        modelMap.put("protf_last_num", 1-Integer.valueOf(protMenuVO.getPage()));
+        modelMap.put("protf_next_num", 1+Integer.valueOf(evolutiondocVO.getPage()));
+        modelMap.put("protf_last_num", 1-Integer.valueOf(evolutiondocVO.getPage()));
 
         return "evolutiondoc::table_refresh";
+    }
+
+    @RequestMapping(value = "/getdocbag.do")
+    public String getDocBag(ModelMap modelMap, @RequestBody @Validated({GetDocBagIntf.class}) EvolutiondocVO evolutiondocVO){
+
+        return "evolutiondoc::protfolio-active";
     }
 
 
