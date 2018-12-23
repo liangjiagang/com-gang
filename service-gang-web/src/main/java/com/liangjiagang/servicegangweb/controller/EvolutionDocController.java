@@ -42,6 +42,12 @@ public class EvolutionDocController {
         return "evolutiondoc";
     }
 
+    /**
+     * 分页获取档案袋标签
+     * @param modelMap
+     * @param evolutiondocVO
+     * @return
+     */
     @RequestMapping(value = "/getprotmenu.do")
     public String getProtMenu(ModelMap modelMap, @RequestBody @Validated({GetProtMenuIntf.class}) EvolutiondocVO evolutiondocVO){
         List<ProtfolioMenuVO> protMenuList = evolutionDocService.getProtMenuList(evolutiondocVO.getPage());
@@ -53,6 +59,12 @@ public class EvolutionDocController {
         return "evolutiondoc::table_refresh";
     }
 
+    /**
+     * 根据标签获取文档袋
+     * @param modelMap
+     * @param evolutiondocVO
+     * @return
+     */
     @RequestMapping(value = "/getdocbag.do")
     public String getDocBag(ModelMap modelMap, @RequestBody @Validated({GetDocBagIntf.class}) EvolutiondocVO evolutiondocVO){
 
