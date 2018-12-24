@@ -156,10 +156,10 @@
         <div class="container-fluid">
             <div class="row protfolio-active" id="protfolio-active" th:fragment="protfolio-active">
                 <!--Single Protfolio Start-->
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 grid-item company " th:each="doc_msg_vo,iterStat : ${doc_msg_list}">
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3 grid-item company " th:each="doc_bag_msg_vo,iterStat : ${doc_bag_msg_list}">
                     <div class="single-protfolio">
                         <div class="protfolio-img img-full">
-                            <div class="div_doc_msg">
+                            <div class="div_doc_msg" th:style="'background-color: '+${doc_bag_msg_vo.background_color}+';'">
                                 <span id="doc_bag_id" th:text="${doc_bag_msg_vo.id}" th:hidden="true"></span>
                                 <h3 id="doc_bag_title" th:text="${doc_bag_msg_vo.title}">spring cloud 配置啊多少个热辐射地方撒范德萨范德萨的萨芬的撒啊</h3>
                                 <h5 id="doc_bag_author" th:text="'作者: '+${doc_bag_msg_vo.author}">作者: 休息休息</h5>

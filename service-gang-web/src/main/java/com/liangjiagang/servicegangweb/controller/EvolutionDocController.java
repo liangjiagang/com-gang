@@ -1,5 +1,6 @@
 package com.liangjiagang.servicegangweb.controller;
 
+import com.liangjiagang.servicegangweb.data.vo.DocBagMsgVO;
 import com.liangjiagang.servicegangweb.data.vo.EvolutiondocVO;
 import com.liangjiagang.servicegangweb.data.vo.MainMenuVO;
 import com.liangjiagang.servicegangweb.data.vo.ProtfolioMenuVO;
@@ -38,6 +39,8 @@ public class EvolutionDocController {
         modelMap.put("protf_menu_list",protMenuList);
         modelMap.put("protf_all_num",10000);
         modelMap.put("protf_next_num",1);
+        List<DocBagMsgVO> list =  evolutionDocService.getDocBag("aaa");
+        modelMap.put("doc_bag_msg_list",list);
 
         return "evolutiondoc";
     }
@@ -60,14 +63,15 @@ public class EvolutionDocController {
     }
 
     /**
-     * 根据标签获取文档袋
+     * 根据标签获取文档袋列表
      * @param modelMap
      * @param evolutiondocVO
      * @return
      */
     @RequestMapping(value = "/getdocbag.do")
     public String getDocBag(ModelMap modelMap, @RequestBody @Validated({GetDocBagIntf.class}) EvolutiondocVO evolutiondocVO){
-
+        List<DocBagMsgVO> list =  evolutionDocService.getDocBag(evolutiondocVO.getDoc_bag_label());
+        modelMap.put("doc_bag_msg_list",list);
         return "evolutiondoc::protfolio-active";
     }
 

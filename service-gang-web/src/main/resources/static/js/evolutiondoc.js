@@ -3,6 +3,9 @@
 
 })(jQuery);
 
+/**
+ * 获取标签和文档袋
+ */
 function getProtMenu() {
     var event = arguments.callee.caller.arguments[0] || window.event;
     event.preventDefault();
@@ -27,7 +30,7 @@ function getProtMenu() {
             //processData: false,// 告诉jQuery不要去处理发送的数据
             contentType: 'application/json;charset=utf-8',
             //dataType: "json",
-            data: '{"page":' + data_text + '}', //注意是""
+            data: '{"page":"' + data_text + '"}', //注意是""
             success: function (data) {
                 $('#table_refresh').html(data);
             },
@@ -35,6 +38,7 @@ function getProtMenu() {
             }
         });
     } else {
+
         $.ajax({
             type: 'POST',
             url: url2,
@@ -43,7 +47,7 @@ function getProtMenu() {
             //processData: false,// 告诉jQuery不要去处理发送的数据
             contentType: 'application/json;charset=utf-8',
             //dataType: "json",
-            data: '{"doc_bag_label":' + data_value + '}', //注意是""
+            data: '{"doc_bag_label":"' + data_value + '"}', //注意是""
             success: function (data) {
                 $('#protfolio-active').html(data);
             },
@@ -57,6 +61,9 @@ function getProtMenu() {
 
 }
 
+/**
+ * 打开文档袋
+ */
 function getDocDefault() {
     var event = arguments.callee.caller.arguments[0] || window.event;
     event.preventDefault();
