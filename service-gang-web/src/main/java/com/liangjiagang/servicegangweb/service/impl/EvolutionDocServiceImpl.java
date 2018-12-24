@@ -17,7 +17,7 @@ public class EvolutionDocServiceImpl implements EvolutionDocService {
         List<ProtfolioMenuVO> list = new ArrayList<>();
 
         if ("0".equals(page)){
-            for (int i = 0; i < 5 ; i++) {
+            for (int i = 0; i < 20 ; i++) {
                 ProtfolioMenuVO protfolioMenuVO = new ProtfolioMenuVO();
                 protfolioMenuVO.setId(i + "");
                 protfolioMenuVO.setText("aaaa");
@@ -26,7 +26,7 @@ public class EvolutionDocServiceImpl implements EvolutionDocService {
                 list.add(protfolioMenuVO);
             }
         }else {
-            for (int i = 0; i < 10 ; i++) {
+            for (int i = 0; i < 30 ; i++) {
                 ProtfolioMenuVO protfolioMenuVO = new ProtfolioMenuVO();
                 protfolioMenuVO.setId(i+"1");
                 protfolioMenuVO.setText("bbbb");

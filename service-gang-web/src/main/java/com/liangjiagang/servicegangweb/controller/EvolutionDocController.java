@@ -72,7 +72,7 @@ public class EvolutionDocController {
     public String getDocBag(ModelMap modelMap, @RequestBody @Validated({GetDocBagIntf.class}) EvolutiondocVO evolutiondocVO){
         List<DocBagMsgVO> list =  evolutionDocService.getDocBag(evolutiondocVO.getDoc_bag_label());
         modelMap.put("doc_bag_msg_list",list);
-        return "evolutiondoc::protfolio-active";
+        return "evolutiondoc :: #protfolio-active";
     }
 
 
