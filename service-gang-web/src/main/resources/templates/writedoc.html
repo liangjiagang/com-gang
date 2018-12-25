@@ -1,0 +1,156 @@
+<!DOCTYPE HTML>
+<html class="no-js" lang="zh-CN"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>写文档 || 聚灵塔</title>
+    <!-- 在根目录中放置FavigICO.ICO -->
+    <link rel="shortcut icon" type="image/x-icon" th:href="@{/img/icon/favicon.ico}">
+
+    <!--时刻注意加载顺序问题-->
+    <!--All Css Here-->
+    <!-- Bootstrap 世界上最受欢迎的前端组件库在Web上构建响应迅速，移动优先的项目
+    Bootstrap是一个用于使用HTML，CSS和JS进行开发的开源工具包。使用我们的Sass变量和mixins，
+    响应式网格系统，广泛的预构建组件以及基于jQuery构建的强大插件，快速构建您的想法或构建整个应用程序-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/bootstrap.min.css}" >
+    <!-- Linearicon 矢量线图标包-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/linearicons.min.css}">
+    <!-- Font Awesome 网络上最受欢迎的图标集和工具包，在您的网站上获取矢量图标和社交徽标-->
+    <!--<link rel="stylesheet" type="text/css" th:href="@{/css/vendor/font-awesome.css}">--><!--不知道为什么加载不出来图标-->
+    <link rel="stylesheet" type="text/css" th:href="@{http://www.jq22.com/jquery/font-awesome.4.6.0.css}">
+    <!-- Meanmenu 响应式移动菜单插件 主要特点
+    隐藏或显示菜单子项
+    目标导航元素与MeanMenu交换
+    方向调整（当您倾斜设备时，居中菜单将重新定位）
+    控制屏幕宽度，MeanMenu激活
+    扩展/折叠子导航
+    捆绑了可配置的CSS
+    快速设置和配置
+    媒体查询独立-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/meanmenu.min.css}">
+    <!-- Jquery Ui 是一组精心设计的用户界面交互，效果，小部件和构建在jQuery JavaScript库之上的主题-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/jquery-ui.css}" >
+    <!-- Nice Select 一个轻量级的jQuery插件，用可自定义的下拉列表替换原生的select元素-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/vendor/nice-select.css}">
+    <!--Editor.md 是一款开源的、可嵌入的 Markdown 在线编辑器（组件），基于 CodeMirror、jQuery 和 Marked 构建.-->
+    <link rel="stylesheet" type="text/css" th:href="@{/editormd/editormd.min.css}">
+    <!-- Style 自定义样式-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
+    <!-- Responsive 为bootstrap实现响应式效果-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/responsive.css}">
+    <!-- writedoc 自定义样式-->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/writedoc.css}">
+
+
+    <!--加载顺序问题,必须放在head里引用-->
+    <!-- Modernizr  以轻松提供分层体验：利用支持它们的浏览器中的最新和最强大的功能，而不会让不那么幸运的用户高低干燥-->
+    <script type="text/javascript" th:src="@{/js/vendor/modernizr-2.8.3.min.js}"></script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <!--Header Area Start-->
+        <header>
+            <div class="header-container">
+                <div class="header-area header-sticky pt-30 pb-30">
+                    <div class="container">
+                        <div class="row">
+                            <!--Header Logo Start-->
+                            <div class="col-12 col-sm-2 col-md-2 col-lg-2 col-xl-2">
+                                <div class="logo-area">
+                                    <a href="/">
+                                        <!--<img th:src="@{img/logo/logo-301.png}" alt="">-->
+                                        <h2>三人行</h2>
+                                    </a>
+                                </div>
+                            </div>
+                            <!--Header Logo End-->
+                            <!--Header Search Area-->
+                            <div class="col-10 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                                <div class="header-search-area">
+                                    <form action="#">
+                                        <div class="form-input">
+                                            <input name="search" id="search" placeholder="" value="Search..." onblur="if(this.value==''){this.value='Search...'}" onfocus="if(this.value=='Search...'){this.value=''}" type="text">
+                                            <button type="submit" class="header-search-btn"><i class="fa fa-search"></i></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!--Header Search Area-->
+                            <!--Header Menu And Mini Cart Start-->
+                            <div class="col-2 col-sm-7 col-md-7 col-lg-7 col-xl-7 text-lg-right">
+                                <div class="header-menu">
+                                    <nav>
+                                        <ul class="main-menu">
+                                            <li th:each="main_menu_vo1,iterStat1 : ${main_menu_list}">
+                                                <a  th:href="${main_menu_vo1.href}" th:text="${main_menu_vo1.text}"></a>
+                                                <ul class="dropdown" th:if="${main_menu_vo1.list}">
+                                                    <li th:each="main_menu_vo2,iterStat2 : ${main_menu_vo1.list}">
+                                                        <a  th:href="${main_menu_vo2.href}" th:text="${main_menu_vo2.text}"></a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <!--Header Menu And Mini Cart End-->
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <!--Mobile Menu Area Start-->
+                                <div class="mobile-menu d-lg-none"></div>
+                                <!--Mobile Menu Area End-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--Header Area End-->
+        <div class="writedoc-editormd mb-50">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <div id="test-editormd">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--注意js加载的顺序问题-->
+    <!--Jquery 1.12.4 是一个快速，小巧，功能丰富的JavaScript库。它通过易于使用的API在大量浏览器中运行，
+    使得HTML文档遍历和操作，事件处理，动画和Ajax更加简单-->
+    <script type="text/javascript" th:src="@{/js/vendor/jquery-1.12.4.min.js}"></script>
+    <!--Popper 用于管理WEB应用程序中的POPPERS的KICKASS库 用于弹窗、提示、下拉菜单-->
+    <script type="text/javascript" th:src="@{/js/vendor/popper.min.js}"></script>
+    <!--Bootstrap 世界上最受欢迎的前端组件库在Web上构建响应迅速，移动优先的项目
+    Bootstrap是一个用于使用HTML，CSS和JS进行开发的开源工具包。使用我们的Sass变量和mixins，
+    响应式网格系统，广泛的预构建组件以及基于jQuery构建的强大插件，快速构建您的想法或构建整个应用程序-->
+    <script type="text/javascript" th:src="@{/js/vendor/bootstrap.min.js}"></script>
+    <!-- Meanmenu 响应式移动菜单插件 主要特点
+    隐藏或显示菜单子项
+    目标导航元素与MeanMenu交换
+    方向调整(当您倾斜设备时，居中菜单将重新定位)
+    控制屏幕宽度，MeanMenu激活
+    扩展/折叠子导航
+    捆绑了可配置的CSS
+    快速设置和配置
+    媒体查询独立-->
+    <script type="text/javascript" th:src="@{/js/vendor/jquery.meanmenu.min.js}"></script>
+    <!--Nice Select 一个轻量级的jQuery插件，用可自定义的下拉列表替换原生的select元素。-->
+    <script type="text/javascript" th:src="@{/js/vendor/jquery.nice-select.min.js}"></script>
+    <!--ScrollUp 它能够让用户滚动条滚动到一定的位置时（可设置），右下角出现“滚动到顶部”的按钮，点击后，
+    页面就是慢慢的滚动到顶部，而不是硬生生的直接回到顶部，提高了用户体验-->
+    <script type="text/javascript" th:src="@{/js/vendor/jquery.scrollUp.min.js}"></script>
+    <!--Editor.md 是一款开源的、可嵌入的 Markdown 在线编辑器（组件），基于 CodeMirror、jQuery 和 Marked 构建.-->
+    <script type="text/javascript" th:src="@{/editormd/editormd.min.js}"></script>
+    <!--writedoc Js 必须放到最后面-->
+    <script type="text/javascript" th:src="@{/js/writedoc.js}"></script>
+</body>
+</html>

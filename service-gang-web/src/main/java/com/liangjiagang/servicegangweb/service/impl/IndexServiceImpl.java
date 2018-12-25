@@ -29,7 +29,7 @@ public class IndexServiceImpl implements IndexService {
         MainMenuVO mainMenuVO4 = new MainMenuVO();
         mainMenuVO4.setId("10040000");
         mainMenuVO4.setText("写文档");
-        mainMenuVO4.setHref("#");
+        mainMenuVO4.setHref("/writedoc");
         MainMenuVO mainMenuVO5 = new MainMenuVO();
         mainMenuVO5.setId("10050000");
         mainMenuVO5.setText("登录");
