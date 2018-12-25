@@ -15,7 +15,7 @@ $(function() {
     $.get('editormd/test.md', function(md){
         testEditor = editormd("test-editormd", {
             placeholder:'本编辑器支持Markdown编辑，左边编写，右边预览',   //默认显示的文字，这里就不解释了
-            width: "90%",                                  //宽度
+            width: "100%",                                  //宽度
             height: 200,                                   //固定高度
             autoHeight: true,                              //自动高度
             markdown : md,                                  //请求的默认厨师md文档
