@@ -32,3 +32,5 @@ security:
 spring:
   application:
     name: server-gang-eureka #服务名称
+logging:
+  config: classpath:logback-prod.xml
