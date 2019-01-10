@@ -45,12 +45,25 @@ debug: 当此属性设置为true时，将打印出logback内部日志信息，�
     </appender>
     <!--上述配置表示每天生成一个日志文件，保存30天的日志文件。-->
 
+    <appender name="socket"
+              class="net.logstash.logback.appender.LogstashSocketAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <host>127.0.0.1</host>
+        <port>4569</port>
+        <customFields>{"appname":"myapp"}</customFields>
+    </appender>
+
     <appender name="LOGSTASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-        <destination>127.0.0.1:4560</destination>
+        <destination>host:post</destination>
         <!-- encoder必须配置,有多种可选 -->
         <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder">
             <customFields>{"appname":"myapp"}</customFields>
         </encoder>
+        <!-- <destination>destination1.domain.com:4560</destination>
+        <destination>destination2.domain.com:4560</destination>
+        <destination>destination3.domain.com:4560</destination> -->
         <!--这个配置是 向logstash输出日志如果有多个logstash IP或端口可以轮询负载各端口-->
         <!--<connectionStrategy>
             <roundRobin>
@@ -64,6 +77,7 @@ debug: 当此属性设置为true时，将打印出logback内部日志信息，�
     <root level="DEBUG">
         <appender-ref ref="STDOUT"/>
         <appender-ref ref="FILE"/>
+        <appender-ref ref="socket"/>
     </root>
 
 </configuration>
